@@ -1,12 +1,22 @@
 import json
-from cochl.sense_sdk import sense
+import os
 import pprint
-import time
+from cochl.sense_sdk import SenseFile
 
-sdkkey ='ENTER YOUR SDK KEY'
-filename = 'test_samples/event/babycry.wav'
+sdkkey = os.environ['SENSE_SDK_KEY']
+audio_file_path = os.path.dirname(os.path.abspath(__file__)) + '/sample_audio'
+audio_file_name = 'babycry.wav'
 task = 'event'
 
-result = sense(filename, sdkkey, task)
-result = json.loads(result.outputs)
-pprint.pprint(result)
+sense_file = SenseFile(sdkkey, task)
+
+
+def main():
+    file_path = os.path.join(audio_file_path, audio_file_name)
+    result = sense_file.predict(file_path)
+    result = json.loads(result)
+    pprint.pprint(result)
+
+
+if __name__ == "__main__":
+    main()

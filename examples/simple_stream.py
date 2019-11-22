@@ -1,14 +1,21 @@
 import json
+import os
 import pprint
 
 from cochl.sense_sdk import SenseStreamer
 
-sdkkey = 'ENTER YOUR SDK KEY'
+sdkkey = os.environ['SENSE_SDK_KEY']
 task = 'event'
 
-with SenseStreamer(sdkkey, task) as stream:
-    audio_generator = stream.generator()
-    for stream_data in stream.record(audio_generator):
-        result = stream.predict(stream_data)
-        result = json.loads(result)
-        pprint.pprint(result)
+
+def main():
+    with SenseStreamer(sdkkey, task) as sense_stream:
+        audio_generator = sense_stream.generator()
+        for stream_data in sense_stream.record(audio_generator):
+            result = sense_stream.predict(stream_data)
+            result = json.loads(result)
+            pprint.pprint(result)
+
+
+if __name__ == "__main__":
+    main()
