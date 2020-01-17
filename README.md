@@ -2,7 +2,7 @@
 
 In order to run Sense SDK, you would require SDK key and Sense SDK Python package. Please contact us by e-mail (support@cochlear.ai) to get your key, which is mandatory to use Sense SDK.
 
-  * __Supported Sound Events__
+  * __Sound Events (34 classes)__
 
 
 |   |     |     |   |
