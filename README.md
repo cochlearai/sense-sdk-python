@@ -2,6 +2,22 @@
 
 In order to run Sense SDK, you would require SDK key and Sense SDK Python package. Please contact us by e-mail (support@cochlear.ai) to get your key, which is mandatory to use Sense SDK.
 
+  * __Supported Sound Events__
+
+
+|   |     |     |   |
+|:---:|:---:|:---:|:---:|
+| Baby_cry | Bicycle_bell | Birds | Burping |
+| Cat_meow | Civil_defense_siren | Clap | Cough |
+| Crowd_applause | Crowd_scream | Dog_bark | Electric_shaver |
+| Explosion | Fart | Finger_snap | Fire_smoke_alarm |
+| Glassbreak | Gunshot | Hiccup | Keyboard_mouse |
+| Knock | Laughter | Mosquito | Scream |
+| Sigh | Sneeze | Snoring | Toilet_flush |
+| Vehicle_horn | Vehicle_siren | Water_liquid | Whisper |
+| Whistling | Wind_noise | | |
+<br />
+
   * __Supported Systems__ _(N/T = Not Tested)_
 
 |            | X86-64  | ARM 64  | ARM 32   |
@@ -21,21 +37,21 @@ Install system packages as required by Sense SDK Python. It depends on the targe
 
 ```sh
 $ sudo apt-get update
-$ sudo apt-get install ffmpeg sox portaudio19-dev virtualenv
+$ sudo apt-get install ffmpeg sox portaudio19-dev virtualenv libssl-dev libcurl4-openssl-dev python3-dev
 ```
 
   * **Raspberry Pi 3 (ARM 32)**
 
 ```sh
 $ sudo apt-get update
-$ sudo apt-get install ffmpeg sox portaudio19-dev virtualenv libatlas-base-dev
+$ sudo apt-get install ffmpeg sox portaudio19-dev virtualenv libatlas-base-dev libssl-dev libcurl4-openssl-dev python3-pyaudio python3-dev
 
 ```
 
   * **NVIDIA Jetson Nano (ARM 64)**
 ```sh
 $ sudo apt-get update
-$ sudo apt-get install ffmpeg sox portaudio19-dev virtualenv python3-dev libffi-dev
+$ sudo apt-get install ffmpeg sox portaudio19-dev virtualenv python3-dev libffi-dev libssl-dev libcurl4-openssl-dev
 ```
 
 ### 2. Setting Python virtual environment
@@ -56,11 +72,19 @@ Install packages within a virtual environment without affecting the host system 
 (venv) $ pip install --upgrade pip
 ```
 
+  * **Raspberry Pi 3 (ARM 32)**
+
+Some `pip` packages can not be installed clearly in RPI3. So, we have to link the packages to the system-package installed by `apt` package manager.
+```sh
+$ ln -s /usr/lib/python3/dist-packages/pyaudio.py venv/lib/python3.7/site-packages/
+$ ln -s /usr/lib/python3/dist-packages/_portaudio.cpython-3* venv/lib/python3.7/site-packages/
+```
+
 ### 3. Installing Sense SDK Python
 
 Install Sense SDK `.whl` file using pip:
 ```sh
-(venv) $ pip install sense_sdk-0.2.0-py3-none-linux_<target arch>.whl
+(venv) $ pip install sense_sdk-0.3.0-py3-none-linux_<target arch>.whl
 ```
 
 _`<target arch>`_ is an architecture name:
@@ -70,7 +94,7 @@ _`<target arch>`_ is an architecture name:
 
 Installation example for Jetson Nano (ARM 64):
 ```sh
-(venv) $ pip install sense_sdk-0.2.0-py3-none-linux_aarch64.whl
+(venv) $ pip install sense_sdk-0.3.0-py3-none-linux_aarch64.whl
 ```
 
 ## Launch Examples

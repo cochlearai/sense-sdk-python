@@ -7,6 +7,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.0] - 2020-01-17
+### Added
+- More sound event detection by the event model (`14` new classes, `34` total classes)
+  - 'Bicycle_belli', 'Birds', 'Burping', 'Cat_meow', 'Clap', 'Crowd_applause', 'Crowd_scream'
+  - 'Explosion', 'Finger_snap', 'Keyboard_mouse', 'Mosquito', 'Sigh', 'Whisper', 'Wind_noise'
+- New library dependencies
+  - `libcurl`, `libssl`
+- Supported sound events label file
+
+### Changed
+- Audio recording package `sounddevice` to `pyaudio`
+- Authorization routine as native C++
+- Result post-processing to more simplify
+- Deep learning inference part as native C++
+
+### Fixed
+- Audio stream accuracy drop from the poor audio recording method
+
 ## [0.2.0] - 2019-11-22
 ### Added
 - New event model which is improved performance about 4% in the internal test set
