@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.1] - 2020-01-22
+### Changed
+- .whl file name of Python abi part, `py3-none` to `cp36-cp36m`, `cp37-cp37m`, `cp38-cp38m`
+
+### Fixed
+- .whl package installation problem due to the new pip version >= 20.0.x
+
 ## [0.3.0] - 2020-01-17
 ### Added
 - More sound event detection by the event model (`14` new classes, `34` total classes)

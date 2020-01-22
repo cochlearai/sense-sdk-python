@@ -18,15 +18,6 @@ In order to run Sense SDK, you would require SDK key and Sense SDK Python packag
 | Whistling | Wind_noise | | |
 <br />
 
-  * __Supported Systems__ _(N/T = Not Tested)_
-
-|            | X86-64  | ARM 64  | ARM 32   |
-|---         | :---:   | :---:   | :---:    |
-| Python 3.5 |  OK  | N/T | N/T |
-| Python 3.6 |  OK  |  OK  |  OK  |
-| Python 3.7 |  OK  |  OK  |  OK  |
-| Python 3.8 |  OK  |  OK  |  N/T |
-
 ## Getting started
 
 ### 1. Prerequisites and Dependencies
@@ -82,20 +73,20 @@ $ ln -s /usr/lib/python3/dist-packages/_portaudio.cpython-3* venv/lib/python3.7/
 
 ### 3. Installing Sense SDK Python
 
-Install Sense SDK `.whl` file using pip:
-```sh
-(venv) $ pip install sense_sdk-0.3.0-py3-none-linux_<target arch>.whl
-```
+To install Sense SDK Python, download the appropriate Python wheel for your system from the following table, and then install it with the `pip install` command.
 
-_`<target arch>`_ is an architecture name:
-  * x86-64: **`x86_64`**
-  * ARM 64: **`aarch64`**
-  * ARM 32: **`armv7l`**
+For example, if you're setting up a Jetson Nano (which has Python 3.7), install the Python wheel as follows (after you click to download the .whl file below):
 
-Installation example for Jetson Nano (ARM 64):
 ```sh
-(venv) $ pip install sense_sdk-0.3.0-py3-none-linux_aarch64.whl
+(venv) $ pip install sense_sdk-0.3.1-cp37-cp37m-linux_aarch64.whl
 ```
+<br />
+
+|            | x86-64 (Ubuntu) | ARM 64 (Jetson Nano) | ARM 32 (Raspberry Pi 3)  |
+| :---: | :---  | :---   | :---    |
+| __Python 3.6__ | sense_sdk-0.3.1-cp36-cp36m-linux_x86_64.whl | sense_sdk-0.3.1-cp36-cp36m-linux_aarch64.whl | sense_sdk-0.3.1-cp36-cp36m-linux_armv7l.whl |
+| __Python 3.7__ | sense_sdk-0.3.1-cp37-cp37m-linux_x86_64.whl | sense_sdk-0.3.1-cp37-cp37m-linux_aarch64.whl | sense_sdk-0.3.1-cp37-cp37m-linux_armv7l.whl |
+| __Python 3.8__ | sense_sdk-0.3.1-cp38-cp38m-linux_x86_64.whl | sense_sdk-0.3.1-cp38-cp38m-linux_aarch64.whl | sense_sdk-0.3.1-cp38-cp38m-linux_armv7l.whl |
 
 ## Launch Examples
 
