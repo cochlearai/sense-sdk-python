@@ -86,7 +86,7 @@ For example, if you're setting up a Jetson Nano (which has Python 3.7), install 
 | :---: | :---  | :---   | :---    |
 | __Python 3.6__ | sense_sdk-0.3.1-cp36-cp36m-linux_x86_64.whl | sense_sdk-0.3.1-cp36-cp36m-linux_aarch64.whl | sense_sdk-0.3.1-cp36-cp36m-linux_armv7l.whl |
 | __Python 3.7__ | sense_sdk-0.3.1-cp37-cp37m-linux_x86_64.whl | sense_sdk-0.3.1-cp37-cp37m-linux_aarch64.whl | sense_sdk-0.3.1-cp37-cp37m-linux_armv7l.whl |
-| __Python 3.8__ | sense_sdk-0.3.1-cp38-cp38m-linux_x86_64.whl | sense_sdk-0.3.1-cp38-cp38m-linux_aarch64.whl | sense_sdk-0.3.1-cp38-cp38m-linux_armv7l.whl |
+| __Python 3.8__ | sense_sdk-0.3.1-cp38-cp38-linux_x86_64.whl | sense_sdk-0.3.1-cp38-cp38-linux_aarch64.whl | sense_sdk-0.3.1-cp38-cp38-linux_armv7l.whl |
 
 ## Launch Examples
 
