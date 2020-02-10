@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.0] - 2020-02-10
+### Added
+- Multi-threads inference
+- Mac OS X support
+- Ubuntu 16.04 support
+
 ## [0.3.1] - 2020-01-22
 ### Changed
 - .whl file name of Python abi part, `py3-none` to `cp36-cp36m`, `cp37-cp37m`, `cp38-cp38m`

@@ -31,6 +31,14 @@ $ sudo apt-get update
 $ sudo apt-get install ffmpeg sox portaudio19-dev virtualenv libssl-dev libcurl4-openssl-dev python3-dev
 ```
 
+  * **Mac OS X (x86-64)**
+
+Install brew(https://brew.sh/) first.
+```sh
+$ brew update
+$ brew install openssl portaudio pyenv python3 wget ffmpeg sox
+```
+
   * **Raspberry Pi 3 (ARM 32)**
 
 ```sh
@@ -63,14 +71,6 @@ Install packages within a virtual environment without affecting the host system 
 (venv) $ pip install --upgrade pip
 ```
 
-  * **Raspberry Pi 3 (ARM 32)**
-
-Some `pip` packages can not be installed clearly in RPI3. So, we have to link the packages to the system-package installed by `apt` package manager.
-```sh
-$ ln -s /usr/lib/python3/dist-packages/pyaudio.py venv/lib/python3.7/site-packages/
-$ ln -s /usr/lib/python3/dist-packages/_portaudio.cpython-3* venv/lib/python3.7/site-packages/
-```
-
 ### 3. Installing Sense SDK Python
 
 To install Sense SDK Python, download the appropriate Python wheel for your system from the following table, and then install it with the `pip install` command.
@@ -78,15 +78,23 @@ To install Sense SDK Python, download the appropriate Python wheel for your syst
 For example, if you're setting up a Jetson Nano (which has Python 3.7), install the Python wheel as follows (after you click to download the .whl file below):
 
 ```sh
-(venv) $ pip install sense_sdk-0.3.1-cp37-cp37m-linux_aarch64.whl
+(venv) $ pip install sense_sdk-0.4.0-cp37-cp37m-linux_aarch64.whl
 ```
 <br />
 
-|            | x86-64 (Ubuntu) | ARM 64 (Jetson Nano) | ARM 32 (Raspberry Pi 3)  |
+  * __Supported Targets and Package Files__
+
+|            | Ubuntu 18.04 or higher | Ubuntu 16.04 | Mac OS X |
 | :---: | :---  | :---   | :---    |
-| __Python 3.6__ | sense_sdk-0.3.1-cp36-cp36m-linux_x86_64.whl | sense_sdk-0.3.1-cp36-cp36m-linux_aarch64.whl | sense_sdk-0.3.1-cp36-cp36m-linux_armv7l.whl |
-| __Python 3.7__ | sense_sdk-0.3.1-cp37-cp37m-linux_x86_64.whl | sense_sdk-0.3.1-cp37-cp37m-linux_aarch64.whl | sense_sdk-0.3.1-cp37-cp37m-linux_armv7l.whl |
-| __Python 3.8__ | sense_sdk-0.3.1-cp38-cp38-linux_x86_64.whl | sense_sdk-0.3.1-cp38-cp38-linux_aarch64.whl | sense_sdk-0.3.1-cp38-cp38-linux_armv7l.whl |
+| __Python 3.6__ | sense_sdk-0.4.0-cp36-cp36m-linux_x86_64.whl | sense_sdk-0.4.0-1604-cp36-cp36m-linux_x86_64.whl | sense_sdk-0.4.0-cp36-cp36m-macosx_10_10_x86_64.whl | sense_sdk-0.4.0-cp36-cp36m-linux_aarch64.whl | sense_sdk-0.4.0-cp36-cp36m-linux_armv7l.whl |
+| __Python 3.7__ | sense_sdk-0.4.0-cp37-cp37m-linux_x86_64.whl | sense_sdk-0.4.0-1604-cp37-cp37m-linux_x86_64.whl | sense_sdk-0.4.0-cp37-cp37m-macosx_10_10_x86_64.whl | sense_sdk-0.4.0-cp37-cp37m-linux_aarch64.whl | sense_sdk-0.4.0-cp37-cp37m-linux_armv7l.whl |
+| __Python 3.8__ | sense_sdk-0.4.0-cp38-cp38m-linux_x86_64.whl | N/A | sense_sdk-0.4.0-cp38-cp38-macosx_10_10_x86_64.whl | sense_sdk-0.4.0-cp38-cp38m-linux_aarch64.whl | sense_sdk-0.4.0-cp38-cp38m-linux_armv7l.whl |
+
+| | ARM 64 (Jetson Nano, Coral) | ARM 32 (Raspberry Pi 3)  |
+| :---: | :---  | :---   |
+| __Python 3.6__ | sense_sdk-0.4.0-cp36-cp36m-linux_aarch64.whl | sense_sdk-0.4.0-cp36-cp36m-linux_armv7l.whl |
+| __Python 3.7__ | sense_sdk-0.4.0-cp37-cp37m-linux_aarch64.whl | sense_sdk-0.4.0-cp37-cp37m-linux_armv7l.whl |
+| __Python 3.8__ | sense_sdk-0.4.0-cp38-cp38-linux_aarch64.whl | sense_sdk-0.4.0-cp38-cp38-linux_armv7l.whl |
 
 ## Launch Examples
 
