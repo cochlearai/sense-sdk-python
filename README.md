@@ -2,21 +2,18 @@
 
 In order to run Sense SDK, you would require SDK key and Sense SDK Python package. Please contact us by e-mail (support@cochlear.ai) to get your key, which is mandatory to use Sense SDK.
 
-  * __Sound Events (34 classes)__
+  * __Sound Events__ for __Emergency__ Service
 
-
-|   |     |     |   |
-|:---:|:---:|:---:|:---:|
-| Baby_cry | Bicycle_bell | Birds | Burping |
-| Cat_meow | Civil_defense_siren | Clap | Cough |
-| Crowd_applause | Crowd_scream | Dog_bark | Electric_shaver |
-| Explosion | Fart | Finger_snap | Fire_smoke_alarm |
-| Glassbreak | Gunshot | Hiccup | Keyboard_mouse |
-| Knock | Laughter | Mosquito | Scream |
-| Sigh | Sneeze | Snoring | Toilet_flush |
-| Vehicle_horn | Vehicle_siren | Water_liquid | Whisper |
-| Whistling | Wind_noise | | |
+||||||
+|:---:|:---:|:---:|:---:|:---:|
+| Fire_smoke_alarm | Glassbreak	| Gunshot_explosion | Scream | Siren |
 <br />
+
+  * __Sound Events__ for __Human Interaction__ Service
+
+|||||
+|:---:|:---:|:---:|:---:|
+| Finger_snap | Knock | Whisper | Whistling |
 
 ## Getting started
 
