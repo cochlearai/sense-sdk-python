@@ -7,7 +7,7 @@ import sys
 from cochl.sense_sdk import SenseStreamer
 
 sdkkey = os.environ['SENSE_SDK_KEY']
-task = 'event'
+task = 'human-interaction'
 
 wait_event = threading.Event()
 is_pause = False

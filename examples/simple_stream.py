@@ -5,8 +5,7 @@ import pprint
 from cochl.sense_sdk import SenseStreamer
 
 sdkkey = os.environ['SENSE_SDK_KEY']
-task = 'event'
-
+task = 'human-interaction'
 
 def main():
     with SenseStreamer(sdkkey, task) as sense_stream:

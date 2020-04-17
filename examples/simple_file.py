@@ -5,8 +5,8 @@ from cochl.sense_sdk import SenseFile
 
 sdkkey = os.environ['SENSE_SDK_KEY']
 audio_file_path = os.path.dirname(os.path.abspath(__file__)) + '/sample_audio'
-audio_file_name = 'babycry.wav'
-task = 'event'
+audio_file_name = 'siren.wav'
+task = 'emergency'
 
 sense_file = SenseFile(sdkkey, task)
 
