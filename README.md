@@ -4,16 +4,16 @@ In order to run Sense SDK, you would require SDK key and Sense SDK Python packag
 
   * __Sound Events__ for __Emergency__ Service
 
-||||||
-|:---:|:---:|:---:|:---:|:---:|
-| Fire_smoke_alarm | Glassbreak	| Gunshot_explosion | Scream | Siren |
+|||||
+|:---:|:---:|:---:|:---:|
+| Fire_smoke_alarm | Glassbreak	| Scream | Siren |
 <br />
 
   * __Sound Events__ for __Human Interaction__ Service
 
-|||||
-|:---:|:---:|:---:|:---:|
-| Finger_snap | Knock | Whisper | Whistling |
+||||||
+|:---:|:---:|:---:|:---:|:---:|
+| Clap | Finger_snap | Knock | Whisper | Whistling |
 
 ## Getting started
 
