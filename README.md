@@ -2,18 +2,25 @@
 
 In order to run Sense SDK, you would require SDK key and Sense SDK Python package. Please contact us by e-mail (support@cochlear.ai) to get your key, which is mandatory to use Sense SDK.
 
-  * __Sound Events__ for __Emergency__ Service
+## Service
+### Emergency
+Sense API Emergency can detect sounds that can be a clue for an emergency occurring in our daily lives. For instance, it can be used for detecting domestic violence, physical altercation, house break-in, or fire alerts.
 
-|||||
-|:---:|:---:|:---:|:---:|
-| Fire_smoke_alarm | Glassbreak	| Scream | Siren |
-<br />
+- Fire_smoke_alarm
+- Glassbreak
+- Scream
+- Siren
 
-  * __Sound Events__ for __Human Interaction__ Service
+### Human-interaction
+Sense API Human-interaction allows computers to understand various human-generated sounds that can be used for interaction. For instance, you can make a system that turns on light with a finger snap, or whistling to call a horse in a game.
 
-||||||
-|:---:|:---:|:---:|:---:|:---:|
-| Clap | Finger_snap | Knock | Whisper | Whistling |
+- Clap
+- Finger_snap
+- Knock
+- Whisper
+- Whistling
+
+> **_Note:_** Clap sounds are well recognized when there is a clean single clap or double clap
 
 ## Getting started
 
@@ -75,23 +82,23 @@ To install Sense SDK Python, download the appropriate Python wheel for your syst
 For example, if you're setting up a Jetson Nano (which has Python 3.7), install the Python wheel as follows (after you click to download the .whl file below):
 
 ```sh
-(venv) $ pip install sense_sdk-0.4.0-cp37-cp37m-linux_aarch64.whl
+(venv) $ pip install sense_sdk-0.4.2-cp37-cp37m-linux_aarch64.whl
 ```
 <br />
 
   * __Supported Targets and Package Files__
 
-|            | Ubuntu 18.04 or higher | Ubuntu 16.04 | Mac OS X |
-| :---: | :---  | :---   | :---    |
-| __Python 3.6__ | sense_sdk-0.4.0-cp36-cp36m-linux_x86_64.whl | sense_sdk-0.4.0-1604-cp36-cp36m-linux_x86_64.whl | sense_sdk-0.4.0-cp36-cp36m-macosx_10_10_x86_64.whl | sense_sdk-0.4.0-cp36-cp36m-linux_aarch64.whl | sense_sdk-0.4.0-cp36-cp36m-linux_armv7l.whl |
-| __Python 3.7__ | sense_sdk-0.4.0-cp37-cp37m-linux_x86_64.whl | sense_sdk-0.4.0-1604-cp37-cp37m-linux_x86_64.whl | sense_sdk-0.4.0-cp37-cp37m-macosx_10_10_x86_64.whl | sense_sdk-0.4.0-cp37-cp37m-linux_aarch64.whl | sense_sdk-0.4.0-cp37-cp37m-linux_armv7l.whl |
-| __Python 3.8__ | sense_sdk-0.4.0-cp38-cp38m-linux_x86_64.whl | N/A | sense_sdk-0.4.0-cp38-cp38-macosx_10_10_x86_64.whl | sense_sdk-0.4.0-cp38-cp38m-linux_aarch64.whl | sense_sdk-0.4.0-cp38-cp38m-linux_armv7l.whl |
+|            | Ubuntu 18.04 or higher | Mac OS X |
+| :---: | :---  | :---  |
+| __Python 3.6__ | sense_sdk-0.4.2-cp36-cp36m-linux_x86_64.whl | sense_sdk-0.4.2-cp36-cp36m-macosx_10_10_x86_64.whl |
+| __Python 3.7__ | sense_sdk-0.4.2-cp37-cp37m-linux_x86_64.whl | sense_sdk-0.4.2-cp37-cp37m-macosx_10_10_x86_64.whl |
+| __Python 3.8__ | sense_sdk-0.4.2-cp38-cp38m-linux_x86_64.whl | sense_sdk-0.4.2-cp38-cp38-macosx_10_10_x86_64.whl |
 
 | | ARM 64 (Jetson Nano, Coral) | ARM 32 (Raspberry Pi 3)  |
 | :---: | :---  | :---   |
-| __Python 3.6__ | sense_sdk-0.4.0-cp36-cp36m-linux_aarch64.whl | sense_sdk-0.4.0-cp36-cp36m-linux_armv7l.whl |
-| __Python 3.7__ | sense_sdk-0.4.0-cp37-cp37m-linux_aarch64.whl | sense_sdk-0.4.0-cp37-cp37m-linux_armv7l.whl |
-| __Python 3.8__ | sense_sdk-0.4.0-cp38-cp38-linux_aarch64.whl | sense_sdk-0.4.0-cp38-cp38-linux_armv7l.whl |
+| __Python 3.6__ | sense_sdk-0.4.2-cp36-cp36m-linux_aarch64.whl | sense_sdk-0.4.2-cp36-cp36m-linux_armv7l.whl |
+| __Python 3.7__ | sense_sdk-0.4.2-cp37-cp37m-linux_aarch64.whl | sense_sdk-0.4.2-cp37-cp37m-linux_armv7l.whl |
+| __Python 3.8__ | sense_sdk-0.4.2-cp38-cp38-linux_aarch64.whl | sense_sdk-0.4.2-cp38-cp38-linux_armv7l.whl |
 
 ## Launch Examples
 
@@ -124,7 +131,7 @@ Create SenseFile object with _SDK key_ and _task_ parameters:
 ```python
 import os
 sdk_key = os.environ['SENSE_SDK_KEY']
-task = 'event'
+task = 'emergency'
 
 sense_file = SenseFile(sdk_key, task)
 ```
@@ -188,7 +195,7 @@ from cochl.sense_sdk import SenseFile
 
 sdkkey = os.environ['SENSE_SDK_KEY']
 filename = 'examples/sample_audio/glassbreak.wav'
-task = 'event'
+task = 'emergency'
 
 sense_file = SenseFile(sdkkey, task)
 result = sense_file.predict(filename)
@@ -212,7 +219,7 @@ INFO: Initialized TensorFlow Lite runtime.
                          'probability': 0.9426,
                          'start_time': 0.0,
                          'tag': 'Glass_break'}],
-            'task': 'event'},
+            'task': 'emergency'},
  'status': {'code': 200, 'description': 'OK'}}
 ```
 
@@ -235,7 +242,7 @@ import pprint
 from cochl.sense_sdk import SenseStreamer
 
 sdkkey = os.environ['SENSE_SDK_KEY']
-task = 'event'
+task = 'human-interaction'
 
 with SenseStreamer(sdkkey, task) as stream:
     audio_generator = stream.generator()
@@ -254,21 +261,21 @@ INFO: Initialized TensorFlow Lite runtime.
                         'start_time': '0.0',
                         'tag': None}],
             'summary': [],
-            'task': 'event'},
+            'task': 'human-interaction'},
  'status': {'code': 200, 'description': 'OK'}}
 {'result': {'frames': [{'end_time': '1.5',
                         'probability': '0.8562',
                         'start_time': '0.5',
                         'tag': 'Whistling'}],
             'summary': [],
-            'task': 'event'},
+            'task': 'human-interaction'},
  'status': {'code': 200, 'description': 'OK'}}
 {'result': {'frames': [{'end_time': '2.0',
                         'probability': '0.8946',
                         'start_time': '1.0',
                         'tag': 'Whistling'}],
             'summary': [],
-            'task': 'event'},
+            'task': 'human-interaction'},
 (......)
 ```
 
@@ -295,8 +302,8 @@ Creates an `SenseFile` object.
 
 **Args:**
   * **`sdkkey`**: Your SDk key to authenticate SDK
-  * **`task`**: Task means what kinds of audio you analyze. New tasks will be added at the future Sense SDK.
-    * *Current supported tasks = [**"event"**]*
+  * **`task`**: Task means what kinds of service you use.
+    * *Current supported tasks = [**"emergency", "human-interaction"**]*
 
 #### `predict`
 ```python
@@ -323,8 +330,8 @@ Creates an `SenseStreamer` object.
 
 **Args:**
   * **`sdkkey`**: Your SDk key to authenticate SDK
-  * **`task`**: Task means what kinds of audio you analyze. New tasks will be added at the future Sense SDK.
-    * *Current supported tasks = [**"event"**]*
+  * **`task`**: Task means what kinds of service you use.
+    * *Current supported tasks = [**"emergency", "human-interaction"**]*
 
 #### `generator`
 ```python
