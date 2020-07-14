@@ -1,26 +1,24 @@
 # Sense SDK for Python
+## Overview
+Cochl. Sense for Python allows you to add environmental sound event detection ability to your applications.
+The following tutorial provides step-by-step instructions to set up the Sense SDK on Python. This process includes installing, building, authorizing, and using the SDK. When finished, you have a working sample app to test interactions with Cochl. Sense.
 
-In order to run Sense SDK, you would require SDK key and Sense SDK Python package. Please contact us by e-mail (support@cochlear.ai) to get your key, which is mandatory to use Sense SDK.
+### Hardware Requirements
+* _CPU_: For optimal performance, we recommend enough computing power to run the Linux operating system at least such as Raspberry Pi 3+ (ARM Cortex-A Series).
+* _Memory_: A minimum of 10MB for loading machine learning model and input data
+* _Required sampling rate_: 22,050Hz
 
-## Service
-### Emergency
-Sense API Emergency can detect sounds that can be a clue for an emergency occurring in our daily lives. For instance, it can be used for detecting domestic violence, physical altercation, house break-in, or fire alerts.
+### Acquiring Credentials
+All users of Sense SDK must obtain authorization credentials to start a project.
+1. Register or sign in at https://dashboard.cochlear.ai.
+2. Send an email request for Sense SDK to support@cochlear.ai
+3. After getting approval from support@cochlear.ai, create a new project: From https://dashboard.cochlear.ai, click __“My projects”__ from the leftside bar, and click __“Add new project”__ to create a new project.
 
-- Fire_smoke_alarm
-- Glassbreak
-- Scream
-- Siren
+![Dashboard Screenshot 1](figs/dashboard-1.png)
 
-### Human-interaction
-Sense API Human-interaction allows computers to understand various human-generated sounds that can be used for interaction. For instance, you can make a system that turns on light with a finger snap, or whistling to call a horse in a game.
+4. After the new project is added, select the SDK Type(_Android/Python_), and click __“DOWNLOAD”__. (_Refresh the page if download button does not appear._)
 
-- Clap
-- Finger_snap
-- Knock
-- Whisper
-- Whistling
-
-> **_Note:_** Clap sounds are well recognized when there is a clean single clap or double clap
+![Dashboard Screenshot 2](figs/dashboard-2.png)
 
 ## Getting started
 
